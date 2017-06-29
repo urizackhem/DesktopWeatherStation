@@ -56,6 +56,7 @@ void setup()
      Countdown--;
      delay(500);
   }
+  // Just read to clean spurious measurements
   calcWeather();
   if(Serial)
     Serial.begin(9600);
@@ -140,6 +141,8 @@ void calcWeather()
   heat_colour = HeatIndex2Danger(heat_index);
 }
 // The pressure sensor is not great...
+// You may want to change it. Compare the reading to local 
+// meteorologically certified data.
 #define PRESSURE_FIX   5.0
 
 void LCDweather()
